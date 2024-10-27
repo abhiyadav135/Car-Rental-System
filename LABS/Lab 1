@@ -1,0 +1,29 @@
+# 1. Check if the Given Number is a Disarium Number
+def is_disarium(num):
+    num_str = str(num)
+    return sum(int(digit) ** (index + 1) for index, digit in enumerate(num_str)) == num
+
+# Call the function
+number = 175  # You can change this number to test
+print(f"Is {number} a Disarium number? {is_disarium(number)}")
+
+# 2. Determine if the Given Number is a Harshad Number
+def is_harshad(num):
+    digit_sum = sum(int(digit) for digit in str(num))
+    return num % digit_sum == 0
+
+# Call the function
+number = 18  # You can change this number to test
+print(f"Is {number} a Harshad number? {is_harshad(number)}")
+
+# 3. Print Armstrong Numbers from 1 to 1000
+def armstrong_numbers(limit):
+    armstrong_list = []
+    for num in range(1, limit + 1):
+        power = len(str(num))
+        if sum(int(digit) ** power for digit in str(num)) == num:
+            armstrong_list.append(num)
+    return armstrong_list
+
+# Call the function
+print("Armstrong numbers from 1 to 1000:", armstrong_numbers(1000))
